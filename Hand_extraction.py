@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 import math
 import os
-import hant
+import Block_face
 
 #Open Camera
 draw = cv2.VideoCapture(0)
@@ -13,7 +13,7 @@ while draw.isOpened():
     ret, frame = draw.read()
     
     #Block the face
-    hant.detect_face(frame, block=True)
+    Block_face.detect_face(frame, block=True)
     
     #Draw rectangle in which hand is to be placed 
     cv2.rectangle(frame,(100,100),(300,300),(0,255,0),0)
